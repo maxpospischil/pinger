@@ -25,10 +25,9 @@ def schedule
     fallback: :abort
   )
 
-  2.times do
-    pool.post { while_true_ping_bluefin("https://ci-basin-master-two.demystdata.com:9002/api/v1/execute?library_id=2&__ignore_cache=1", "9 json blob download attributes") }
-    pool.post { while_true_ping_bluefin("https://ci-basin-master-two.demystdata.com:9002/api/v1/execute?library_id=3&__ignore_cache=1", "2 rng attributes") }
-  end
+
+  pool.post { while_true_ping_bluefin("https://ci-basin-master-two.demystdata.com:9002/api/v1/execute?library_id=2&__ignore_cache=1", "9 json blob download attributes") }
+  #pool.post { while_true_ping_bluefin("https://ci-basin-master-two.demystdata.com:9002/api/v1/execute?library_id=3&__ignore_cache=1", "2 rng attributes") }
 
 end
 
